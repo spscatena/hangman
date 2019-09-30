@@ -7,10 +7,10 @@ The game of hangman is typically played with two players. This version of the ga
 ## Hangman Wireframes
 ### Desktop 
 
-![wireframe](/Users/sabrinascatena/sei/week-3-project-week/hangman/wireframe_desktop.png)
+![wireframe](wireframe_desktop.png)
 
 ### Mobile
-![wireframe-mobile](/Users/sabrinascatena/sei/week-3-project-week/hangman/wireframe_mobile.png)
+![wireframe-mobile](wireframe_mobile.png)
 
 
 ## Features
