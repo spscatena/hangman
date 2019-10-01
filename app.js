@@ -11,6 +11,7 @@
 // Letters === ["s" "o" "l"]
 // Css to get the strike through 
 
+//Gets a random word when the play button is clicked
 const playButton = document.querySelector("#playButton")
 playButton.addEventListener("click", async function () {
   const response = await axios.get('https://wordsapiv1.p.mashape.com/words/?random=true&lettersMax=8&partOfSpeech=verb', {
@@ -21,35 +22,41 @@ playButton.addEventListener("click", async function () {
 
   const randomWord = response.data.word
   console.log("original word: " + randomWord)
+  // const displayWord = ["_"] // need this to display with underscores ['_', 'A', '_'] 
+  // for (let i = 0; i < spacedRandomWord.length; i++) {
+  //   console.log(displayWord.length)
+
+  // }
+
+  document.getElementById("randomWordPlacement").innerHTML = randomWord.replace(/[a-z]/g, '_')
   const spacedRandomWord = randomWord.split("")
-  const displayWord = ['_', 'A', '_']
-
-  let insertRandomWord = document.querySelector("#randomWordPlacement")
-  insertRandomWord.innerHTML =
-    `<p> Random Word: ${displayWord.join(" ")} </p>`
 
 
+  //takes the chosen letter and loops through the display word. 
 
-  const chosenLetter = document.querySelector("#A")
-  chosenLetter.addEventListener("click", letterActivity)
-  const letterActivity = function () {
-    for (let i = 0; i < spacedRandomWord.length; i++) {
-      if (chosenLetter === spacedRandomWord[i]) {
-        displayWord[i] = chosenLetter
-      }
-    }
+  // const chosenLetter = document.querySelector("alphabet")
+  // chosenLetter.addEventListener("click", function () {
+  //   const letterActivity = 
+  //   for (let i = 0; i < spacedRandomWord.length; i++) {
+  //     if (chosenLetter === spacedRandomWord[i]) {
+  //       displayWord[i] = chosenLetter
+  //     }
+  //   }
 
-    let insertRandomWord = document.querySelector("#randomWordPlacement")
-    insertRandomWord.innerHTML =
-      `<p> Random Word: ${displayWord.join(" ")} </p>`
 
-  }
 
 })
 
 
-//I need to get the random word. use it for the hint-- need to get the synonym wen hint is clicked
-//definition = response.data.results[0].definition
+
+
+
+
+
+
+
+
+
 
 
 //})
@@ -60,7 +67,10 @@ playButton.addEventListener("click", async function () {
 // insertRandomWord.innerHTML =
 //   `<p> Random Word: ${randomWord} </p>`
 
-
+  //Prints to the page but it's a sting? 
+  // let insertRandomWord = document.querySelector("#randomWordPlacement")
+  // insertRandomWord.innerHTML =
+  //   `<p> Random Word: ${displayWord.join(" ")} </p>`
 
 
 //Below is all safe code
