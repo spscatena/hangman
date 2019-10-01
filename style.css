@@ -1,7 +1,7 @@
 body {
   background-color: olive;
+  font-size: 30px;
 }
-
 
 #container {
   height: 80px;
@@ -28,3 +28,19 @@ button:hover {
   background-color: lightgray;
 }
 
+#alphabet {
+  text-decoration: none;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+a:active {
+  color: blue;
+}
+
+a:visited {
+  text-decoration: line-through;
+}
