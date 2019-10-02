@@ -2,22 +2,16 @@ const guesses = document.querySelector("#guesses")
 
 const playButton = document.querySelector("#playButton")
 playButton.addEventListener("click", async function () {
-  let response = await axios.get('https://wordsapiv1.p.mashape.com/words/?random=true&lettersMax=8&partOfSpeech=verb', {
-    'headers': {
-      "X-Mashape-Key": "51dca4278fmsh6c701f259ac22d4p1274dajsn501e7e39e747",
-    }
-  })
-
-  let randomWord = response.data.word
-
-  if (randomWord.includes(" ")) {
-    let response = await axios.get('https://wordsapiv1.p.mashape.com/words/?random=true&lettersMax=8&partOfSpeech=verb', {
+  let randomWord = ''
+  do {
+    const response = await axios.get('https://wordsapiv1.p.mashape.com/words/?random=true&lettersMax=8&partOfSpeech=verb', {
       'headers': {
         "X-Mashape-Key": "51dca4278fmsh6c701f259ac22d4p1274dajsn501e7e39e747",
       }
     })
     randomWord = response.data.word
-  }
+  } while (randomWord.includes(" "))
+
 
   playButton.hidden = true;
   // const randomWord = "the dinosaur"
@@ -111,6 +105,16 @@ playButton.addEventListener("click", async function () {
   //       document.querySelector("#randomWordPlacement").innerHTML = underlineWord
   //     }
   //   }
+  // }
+
+
+  // if (randomWord.includes(" ")) {
+  //   let response = await axios.get('https://wordsapiv1.p.mashape.com/words/?random=true&lettersMax=8&partOfSpeech=verb', {
+  //     'headers': {
+  //       "X-Mashape-Key": "51dca4278fmsh6c701f259ac22d4p1274dajsn501e7e39e747",
+  //     }
+  //   })
+  //   randomWord = response.data.word
   // }
 
 });
