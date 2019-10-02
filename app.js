@@ -2,18 +2,25 @@ const guesses = document.querySelector("#guesses")
 
 const playButton = document.querySelector("#playButton")
 playButton.addEventListener("click", async function () {
-  const response = await axios.get('https://wordsapiv1.p.mashape.com/words/?random=true&lettersMax=8&partOfSpeech=verb', {
+  let response = await axios.get('https://wordsapiv1.p.mashape.com/words/?random=true&lettersMax=8&partOfSpeech=verb', {
     'headers': {
       "X-Mashape-Key": "51dca4278fmsh6c701f259ac22d4p1274dajsn501e7e39e747",
     }
   })
 
+  let randomWord = response.data.word
+
+  if (randomWord.includes(" ")) {
+    let response = await axios.get('https://wordsapiv1.p.mashape.com/words/?random=true&lettersMax=8&partOfSpeech=verb', {
+      'headers': {
+        "X-Mashape-Key": "51dca4278fmsh6c701f259ac22d4p1274dajsn501e7e39e747",
+      }
+    })
+    randomWord = response.data.word
+  }
+
   playButton.hidden = true;
-
-
-
-
-  const randomWord = response.data.word
+  // const randomWord = "the dinosaur"
   console.log("original word: " + randomWord)
   const underlineArray = []
   for (let i = 0; i < randomWord.length; i++) {
@@ -32,6 +39,8 @@ playButton.addEventListener("click", async function () {
           if (e.key === randomWord[i]) {
             console.log("it's a match")
             underlineArray[i] = e.key //wherever i is in the _, set that to the key pressed so that appears instead of the underscore
+            console.log(underlineArray);
+
             let underlineWord = underlineArray.join("  ") //this is going from an array to a string
             document.querySelector("#randomWordPlacement").innerHTML = underlineWord
           }
@@ -50,39 +59,25 @@ playButton.addEventListener("click", async function () {
         } else if (wrongGuesses === 5) {
           document.querySelector("#hangman").innerHTML = `<img id="hang5" src="hangman5.png"><img>`
         } else if (wrongGuesses === 6) {
-          document.querySelector("#hangman").innerHTML = `<img id="hang1" src="hangman6.png"><img>`
+          document.querySelector("#hangman").innerHTML = `<img id="hang6" src="hangman6.png"><img>`
         } else if (wrongGuesses === 7) {
-          document.querySelector("#hangman").innerHTML = `<img id="hang1" src="hangman7.png"><img>`
+          document.querySelector("#hangman").innerHTML = `<img id="hang7" src="hangman7.png"><img>`
         }
-
-
-
       }
 
       if (underlineArray.join("") === randomWord) {
         alert("you win!")
       } else if (guesses.innerHTML.length === 7) {
+        document.querySelector("#correctWord").innerHTML = `<p>Correct Word: ${randomWord} </p>`
         alert("you lose!")
       }
-
     }
-  })
+  });
 
-  // document.addEventListener("DOMContentLoaded", function () {
-  //   document.getElementById("#playButton").disabled = true;
-});
-
-  //document.getElementById("#playButton").disabled = true;
-  //document.getElementById("#playButton").style.display = "none";
-
-
-  //playButton.document.style 
 
 
   //still need to do: 
-  //1. add the hangman images 
-  //
-  //2. bug: hitting the enter key = the play button which makes things buggy
+  //if lost, what was the word? 
   //3. Hint to add a letter
 
 
@@ -100,8 +95,25 @@ playButton.addEventListener("click", async function () {
   //   }
   // }
 
+  //document.addEventListener("DOMContentLoaded", function () {
 
 
+  // CODE FOR DEALING WITH WORDS WITH SPACES:
+
+  // document.addEventListener("keydown", function (e) {
+  //   if (e.keyCode >= 65 && e.keyCode <= 90 || e.keyCode === 32)...
+
+  // else if (randomWord.includes(" ") && e.keyCode === 32) {
+  //   for (let i = 0; i < randomWord.length; i++) {
+  //     if (randomWord[i] === " ") {
+  //       underlineArray[i] = " "
+  //       let underlineWord = underlineArray.join("")
+  //       document.querySelector("#randomWordPlacement").innerHTML = underlineWord
+  //     }
+  //   }
+  // }
+
+});
 
 
 

@@ -4,7 +4,6 @@ body {
 }
 
 #container {
-  height: 80px;
   width: 100%;
   background-color: none;
   display: flex; 
@@ -12,10 +11,16 @@ body {
   justify-content: left;
 }
 
+header {
+  text-align: center;
+}
+  
 h1 {
   height: 80px;
   width: 100%;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-decoration-style: dashed;
+  text-decoration-line: underline
 }
 
 button {
@@ -26,6 +31,11 @@ button {
 }
 button:hover {
   background-color: lightgray;
+}
+
+#buttons {
+text-align: center;
+height: 100px;
 }
 
 #alphabet {
@@ -43,4 +53,39 @@ a:active {
 
 a:visited {
   text-decoration: line-through;
+}
+
+#pageElements{
+  display: flex;
+  justify-content: center;
+}
+
+#hangman {
+  justify-content: left;
+  width: 450px;
+
+}
+
+#randomWordPlacement {
+  border: none;
+}
+
+#guesses {
+  border: none;
+  text-align: center;
+  padding-bottom: 50px;
+
+}
+
+#letters {
+  border: none;
+
+}
+
+#word {
+  padding-bottom: 50px;
+}
+
+#correctWord {
+  
 }
