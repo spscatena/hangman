@@ -8,16 +8,22 @@ playButton.addEventListener("click", async function () {
     }
   })
 
+  playButton.hidden = true;
+
+
+
+
   const randomWord = response.data.word
   console.log("original word: " + randomWord)
   const underlineArray = []
   for (let i = 0; i < randomWord.length; i++) {
     underlineArray.push("__")
   }
-  const underlineWord = underlineArray.join("  ") //not sure how .join is working here
+  const underlineWord = underlineArray.join("  ") //
   console.log(underlineWord)
   document.querySelector("#randomWordPlacement").innerHTML = underlineWord
   let wrongGuesses = 0
+
 
   document.addEventListener("keydown", function (e) {
     if (e.keyCode >= 65 && e.keyCode <= 90) {
@@ -34,10 +40,25 @@ playButton.addEventListener("click", async function () {
         guesses.innerHTML += e.key
         wrongGuesses += 1
         if (wrongGuesses === 1) {
-          document.querySelector("#hangman").innerHTML = `<img src= hangman.png>`
+          document.querySelector("#hangman").innerHTML = `<img id="hang1" src="hangman1.png"><img>`
+        } else if (wrongGuesses === 2) {
+          document.querySelector("#hangman").innerHTML = `<img id="hang2" src="hangman2.png"><img>`
+        } else if (wrongGuesses === 3) {
+          document.querySelector("#hangman").innerHTML = `<img id="hang3" src="hangman3.png"><img>`
+        } else if (wrongGuesses === 4) {
+          document.querySelector("#hangman").innerHTML = `<img id="hang4" src="hangman4.png"><img>`
+        } else if (wrongGuesses === 5) {
+          document.querySelector("#hangman").innerHTML = `<img id="hang5" src="hangman5.png"><img>`
+        } else if (wrongGuesses === 6) {
+          document.querySelector("#hangman").innerHTML = `<img id="hang1" src="hangman6.png"><img>`
+        } else if (wrongGuesses === 7) {
+          document.querySelector("#hangman").innerHTML = `<img id="hang1" src="hangman7.png"><img>`
         }
 
+
+
       }
+
       if (underlineArray.join("") === randomWord) {
         alert("you win!")
       } else if (guesses.innerHTML.length === 7) {
@@ -46,6 +67,18 @@ playButton.addEventListener("click", async function () {
 
     }
   })
+
+  // document.addEventListener("DOMContentLoaded", function () {
+  //   document.getElementById("#playButton").disabled = true;
+});
+
+  //document.getElementById("#playButton").disabled = true;
+  //document.getElementById("#playButton").style.display = "none";
+
+
+  //playButton.document.style 
+
+
   //still need to do: 
   //1. add the hangman images 
   //
@@ -69,6 +102,6 @@ playButton.addEventListener("click", async function () {
 
 
 
-})
+
 
 
