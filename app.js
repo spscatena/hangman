@@ -1,3 +1,7 @@
+let playAgain = " "
+playAgain = document.querySelector("#playAgain")
+playAgain.hidden = true;
+
 const guesses = document.querySelector("#guesses")
 let definition = " "
 let hintButton = " "
@@ -77,60 +81,13 @@ playButton.addEventListener("click", async function () {
         document.querySelector("#correctWord").innerHTML = `<p> Congratulations, you won! </p>`
       } else if (guesses.innerHTML.length === 7) {
         document.querySelector("#correctWord").innerHTML = `<p> You lose, the correct word is: ${randomWord} </p>`
+        playAgain.hidden = false;
+        playAgain.addEventListener("click", function () {
+          document.querySelector("#playButton").value = window.location.reload()
+
+        })
       }
-    }
+    };
   });
-
-
-
-  //still need to do: 
-  //if lost, what was the word? 
-  //3. Hint to add a letter
-
-
-
-
-  // const randomLetter = math.random(randomLetter)
-  // const hintButton = document.querySelector("#hintButton")
-  // //hintButton.addEventListener("click", function () {
-
-  // function hint() {
-  //   if (hintButton.addEventListener("click")) {
-  //     const randomLetter = underlineArray[(Math.floor(Math.random() * underlineArray.length))];
-  //     document.querySelector("#randomWordPlacement").innerHTML = randomLetter
-
-  //   }
-  // }
-
-  //document.addEventListener("DOMContentLoaded", function () {
-
-
-  // CODE FOR DEALING WITH WORDS WITH SPACES:
-
-  // document.addEventListener("keydown", function (e) {
-  //   if (e.keyCode >= 65 && e.keyCode <= 90 || e.keyCode === 32)...
-
-  // else if (randomWord.includes(" ") && e.keyCode === 32) {
-  //   for (let i = 0; i < randomWord.length; i++) {
-  //     if (randomWord[i] === " ") {
-  //       underlineArray[i] = " "
-  //       let underlineWord = underlineArray.join("")
-  //       document.querySelector("#randomWordPlacement").innerHTML = underlineWord
-  //     }
-  //   }
-  // }
-
-
-  // if (randomWord.includes(" ")) {
-  //   let response = await axios.get('https://wordsapiv1.p.mashape.com/words/?random=true&lettersMax=8&partOfSpeech=verb', {
-  //     'headers': {
-  //       "X-Mashape-Key": "51dca4278fmsh6c701f259ac22d4p1274dajsn501e7e39e747",
-  //     }
-  //   })
-  //   randomWord = response.data.word
-  // }
-
-});
-
-
+})
 
