@@ -112,3 +112,62 @@ a:visited {
   height: 100px;
   text-align: center;
 }
+
+@media (max-width: 500px) {
+
+  #container {
+    justify-content: center;
+  }
+
+  #pageElements {
+    flex-direction: column;
+    flex-direction: column-reverse;
+  }
+
+  #buttons {
+    height: auto;
+}  
+  img {
+    max-width: 50%;
+  }
+ 
+  #divHeader {
+    height: 90px;
+  }
+
+  header {
+    height: auto;
+  }
+
+
+  #hangman {
+    justify-content: center;
+    width: 450px;
+  
+  }
+
+  h1 {
+    width: 100%;
+    font-size: 40px; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration-style: dashed;
+    text-decoration-line: underline
+  }
+
+ #correctWord {
+   height: auto;
+ }
+
+ #hint {
+   height: auto;
+ }
+
+#word {
+  height: auto;
+}
+
+#letters {
+  font-size: 25px; 
+}
+
+}
