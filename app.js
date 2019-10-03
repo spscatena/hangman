@@ -1,8 +1,9 @@
 const guesses = document.querySelector("#guesses")
-
+let definition = " "
+//put hint button here
 const playButton = document.querySelector("#playButton")
 playButton.addEventListener("click", async function () {
-  let randomWord = ''
+  let randomWord = " "
   do {
     const response = await axios.get('https://wordsapiv1.p.mashape.com/words/?random=true&lettersMax=8&partOfSpeech=verb', {
       'headers': {
@@ -10,10 +11,14 @@ playButton.addEventListener("click", async function () {
       }
     })
     randomWord = response.data.word
-  } while (randomWord.includes(" "))
+    definition = response.data.results[0].definition
+    console.log(response)
+    console.log(definition)
+  } while (randomWord.includes(" ") || definition === undefined)
 
 
   playButton.hidden = true;
+  //activate hint button here
   // const randomWord = "the dinosaur"
   console.log("original word: " + randomWord)
   const underlineArray = []
