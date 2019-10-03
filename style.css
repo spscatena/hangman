@@ -89,6 +89,8 @@ a:visited {
 
 #word {
   padding-bottom: 50px;
+  text-align: center;
+
 }
 
 #correctWord {

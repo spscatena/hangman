@@ -60,10 +60,9 @@ playButton.addEventListener("click", async function () {
       }
 
       if (underlineArray.join("") === randomWord) {
-        alert("you win!")
+        document.querySelector("#correctWord").innerHTML = `<p> Congratulations, you won! </p>`
       } else if (guesses.innerHTML.length === 7) {
-        document.querySelector("#correctWord").innerHTML = `<p>Correct Word: ${randomWord} </p>`
-        alert("you lose!")
+        document.querySelector("#correctWord").innerHTML = `<p> You lose, the correct word is: ${randomWord} </p>`
       }
     }
   });
