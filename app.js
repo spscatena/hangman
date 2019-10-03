@@ -1,6 +1,14 @@
 const guesses = document.querySelector("#guesses")
 let definition = " "
-//put hint button here
+let hintButton = " "
+hintButton = document.querySelector("#hintButton")
+hintButton.hidden = true;
+
+hintButton.addEventListener("click", function () {
+  document.querySelector("#hint").innerHTML = `<p> HINT: ${definition} </p>`
+})
+
+
 const playButton = document.querySelector("#playButton")
 playButton.addEventListener("click", async function () {
   let randomWord = " "
@@ -18,7 +26,8 @@ playButton.addEventListener("click", async function () {
 
 
   playButton.hidden = true;
-  //activate hint button here
+  hintButton.hidden = false;
+
   // const randomWord = "the dinosaur"
   console.log("original word: " + randomWord)
   const underlineArray = []

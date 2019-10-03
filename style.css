@@ -48,13 +48,13 @@ height: 80px;
 
 }
 
-a {
+/* a {
   text-decoration: none;
 }
 
 a:active {
   color: blue;
-}
+} */
 
 a:visited {
   text-decoration: line-through;
@@ -78,21 +78,37 @@ a:visited {
 #guesses {
   border: none;
   text-align: center;
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
+  /* border: 2px solid blue; */
+  height: 50px; 
+
 
 }
 
 #letters {
-  border: none;
+  /* border: 5px solid grey; */
 
 }
 
 #word {
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
   text-align: center;
+  /* border: 2px solid green; */
+  height: 100px;
+
 
 }
 
 #correctWord {
+  /* padding-bottom: 50px; */
+  /* border: 2px solid black; */
+  text-align: center;
+  height: 100px;
   
+}
+
+#hint {
+  /* border: 2px solid olive; */
+  height: 100px;
+  text-align: center;
 }
