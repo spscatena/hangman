@@ -16,7 +16,7 @@ header {
 }
   
 h1 {
-  height: 80px;
+  height: auto;
   width: 100%;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-decoration-style: dashed;
@@ -116,7 +116,7 @@ a:visited {
   text-align: center;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
 
   #container {
     justify-content: center;
@@ -135,7 +135,7 @@ a:visited {
   }
  
   #divHeader {
-    height: 90px;
+    height: auto;
   }
 
   header {
@@ -154,7 +154,7 @@ a:visited {
     font-size: 40px; 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-decoration-style: dashed;
-    text-decoration-line: underline
+    text-decoration-line: underline 
   }
 
  #correctWord {
