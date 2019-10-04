@@ -32,13 +32,12 @@ playButton.addEventListener("click", async function () {
   playButton.hidden = true;
   hintButton.hidden = false;
 
-  // const randomWord = "the dinosaur"
   console.log("original word: " + randomWord)
   const underlineArray = []
   for (let i = 0; i < randomWord.length; i++) {
     underlineArray.push("__")
   }
-  const underlineWord = underlineArray.join("  ") //
+  const underlineWord = underlineArray.join("  ")
   console.log(underlineWord)
   document.querySelector("#randomWordPlacement").innerHTML = underlineWord
   let wrongGuesses = 0

@@ -46,22 +46,14 @@ text-align: center;
 height: 80px;
 }
 
-#alphabet {
+/* #alphabet {
   text-decoration: none;
 
 }
-
-/* a {
-  text-decoration: none;
-}
-
-a:active {
-  color: blue;
-} */
 
 a:visited {
   text-decoration: line-through;
-}
+} */
 
 #pageElements{
   display: flex;
@@ -103,8 +95,6 @@ a:visited {
 }
 
 #correctWord {
-  /* padding-bottom: 50px; */
-  /* border: 2px solid black; */
   text-align: center;
   height: 100px;
   
