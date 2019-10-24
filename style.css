@@ -109,7 +109,7 @@ a:visited {
 @media (max-width: 550px) {
 
   #container {
-    justify-content: center;
+    display: flex;
   }
 
   #pageElements {

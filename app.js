@@ -1,5 +1,8 @@
 let playAgain = " "
 playAgain = document.querySelector("#playAgain")
+playAgain.addEventListener("click", function () {
+  document.querySelector("#playButton").value = window.location.reload()
+})
 playAgain.hidden = true;
 
 const guesses = document.querySelector("#guesses")
@@ -78,15 +81,11 @@ playButton.addEventListener("click", async function () {
 
       if (underlineArray.join("") === randomWord) {
         document.querySelector("#correctWord").innerHTML = `<p> Congratulations, you won! </p>`
+        playAgain.hidden = false;
       } else if (guesses.innerHTML.length === 7) {
         document.querySelector("#correctWord").innerHTML = `<p> You lose, the correct word is: ${randomWord} </p>`
         playAgain.hidden = false;
-        playAgain.addEventListener("click", function () {
-          document.querySelector("#playButton").value = window.location.reload()
-
-        })
       }
-    };
-  });
+    }
+  })
 })
-
