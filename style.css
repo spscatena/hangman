@@ -114,70 +114,18 @@ a:visited {
 
 }
 
-@media (max-width: 550px) {
-
-  #container {
-    display: flex;
-  }
-
-  #pageElements {
-    flex-direction: column;
-    flex-direction: column-reverse;
-  }
-
-  #buttons {
-    height: auto;
-}  
-
-  img {
-    /* max-width: 50%; */
-
-  }
- 
-  #divHeader {
-    /* height: 700vh; */
-    /* border: 2px solid saddlebrown; */
-
-    /* margin: 0; */
-
-  }
-
-  header {
-    /* height: 80vh; */
-  }
-
-
-  #hangman {
-    justify-content: center;
-    /* width: 450px; */
-    height: 10vh;
-  
-  }
-
-  h1 {
-    width: 100%;
-    font-size: 40px; 
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-decoration-style: dashed;
-    text-decoration-line: underline; 
-  }
-
- #correctWord {
-   height: auto;
- }
-
- #hint {
-   height: auto;
- }
-
-#word {
-  height: auto;
+#hidden {
+  display: none;
 }
 
-#letters {
-  font-size: 25px; 
+
+@media (max-width: 740px) {
+#hidden {
+  display: block;
 }
 
-:-ms-keyboard-active
+#container {
+  display: none;
+}
 
 }
